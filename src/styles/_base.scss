@@ -1,0 +1,25 @@
+body {
+  font-family: "Poppins", sans-serif;
+  @apply text-[14px] 1200:text-[16px]
+}
+
+.font-bebas {
+  font-family: "Bebas Neue", serif;
+}
+
+.wrapper {
+  @apply 800:max-w-[90%] 1900:max-w-[1760px] mx-auto px-5;
+}
+
+.common-gap {
+  @apply gap-[12px] 800:gap-[18px] 1200:gap-[24px];
+}
+
+.common-radius {
+  @apply rounded-[6px] 800:rounded-[8px] 1200:rounded-[12px];
+}
+
+.common-shadow {
+  box-shadow: 0 0 18px 0 #00000014;
+}
+

@@ -1,0 +1,48 @@
+<section-container class="flex-grow" bgColor="gray">
+  <div class="wrapper grid grid-cols-5 items-start gap-5">
+    @if (blog()) {
+      <ng-container
+        *ngTemplateOutlet="navigationBack"
+      />
+      <ng-container
+        *ngTemplateOutlet="blogInfo"
+      />
+    } @else {
+      <loader class="col-span-5" />
+    }
+  </div>
+</section-container>
+
+<ng-template #navigationBack>
+  <div class="col-span-5 1100:col-span-1 flex items-center gap-3 relative pl-13">
+    <div
+      class="absolute left-0 w-11 aspect-square grid place-content-center rounded-full custom-shadow cursor-pointer bg-white"
+      (click)="back()"
+    >
+      <icon name="arrow-back" size="24"/>
+    </div>
+
+    <div class="text-[#474B56] font-thin">Orqaga qaytish</div>
+  </div>
+</ng-template>
+
+<ng-template #blogInfo>
+  <div class="col-span-5 1100:col-span-3 flex flex-col gap-3 800:gap-4 1200:gap-5 pb-20">
+    @if (blog()) {
+      <div class="font-thin">
+        <a class="text-[#474B56]" routerLink="/blogs">Blog va yangiliklar</a> /
+        <span class="font-normal">{{ blog().title }}</span>
+      </div>
+
+      <div class="aspect-[986/641] common-radius overflow-hidden">
+        <image class="w-full h-full" [src]="blog().image"/>
+      </div>
+
+      <p class="text-[#474B56] font-thin leading-[1.2]">{{ blog().type }}</p>
+
+      <h1 class="text-[20px] 800:text-[22px] 1200:text-[24px] leading-[1.2] font-normal">{{ blog().title }}</h1>
+
+      <p class="text-[#474B56] font-thin">{{ blog().text }}</p>
+    }
+  </div>
+</ng-template>

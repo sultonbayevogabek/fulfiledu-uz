@@ -1,0 +1,30 @@
+<section-container>
+  <div class="wrapper flex flex-col common-gap">
+    @if (images().length) {
+      <ng-container
+        *ngTemplateOutlet="blogsTemplate"
+      />
+    } @else {
+      <skeleton
+        type="media"
+        [count]="16"
+      />
+    }
+  </div>
+</section-container>
+
+<ng-template #blogsTemplate>
+  <div class="grid grid-cols-1 500:grid-cols-2 900:grid-cols-3 1400:grid-cols-4 common-gap">
+    @for (item of images(); let i = $index; track i) {
+      <ng-container
+        *ngTemplateOutlet="imageTemplate; context: { $implicit: item }"
+      />
+    }
+  </div>
+</ng-template>
+
+<ng-template #imageTemplate let-item>
+  <div class="aspect-[408/299] common-radius overflow-hidden bg-gray-200">
+    <image class="w-full h-full" [src]="item.image"/>
+  </div>
+</ng-template>

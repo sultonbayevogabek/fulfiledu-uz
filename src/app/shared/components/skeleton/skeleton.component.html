@@ -1,0 +1,63 @@
+<div class="grid grid-cols-1 500:grid-cols-2 900:grid-cols-3 1400:grid-cols-4 common-gap">
+  @for (i of Array(count()).fill(1); track i) {
+    @if (type() === 'members') {
+      <ng-container
+        *ngTemplateOutlet="memberSkeleton;"
+      />
+    }
+
+    @if (type() === 'blog') {
+      <ng-container
+        *ngTemplateOutlet="blogSkeleton;"
+      />
+    }
+
+    @if (type() === 'media') {
+      <ng-container
+        *ngTemplateOutlet="mediaSkeleton;"
+      />
+    }
+
+    @if (type() === 'vacancies') {
+      <ng-container
+        *ngTemplateOutlet="vacanciesSkeleton;"
+      />
+    }
+  }
+</div>
+
+<ng-template #memberSkeleton>
+  <div class="flex flex-col gap-3">
+    <div class="aspect-square common-radius overflow-hidden bg-gray-200 animate-pulse">
+    </div>
+
+    <div class="flex flex-col gap-2 pb-3 500:pb-0 border-b border-b-[#DCDFE7] 500:border-b-0">
+      <div class="w-2/3 h-6 bg-gray-200 animate-pulse rounded"></div>
+      <div class="w-4/5 h-7 bg-gray-200 animate-pulse rounded"></div>
+      <div class="w-full aspect-[362/83] bg-gray-200 animate-pulse rounded"></div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #blogSkeleton>
+  <div class="flex flex-col gap-3">
+    <div class="aspect-[362/277] common-radius overflow-hidden bg-gray-200 animate-pulse">
+    </div>
+
+    <div class="flex flex-col gap-2 pb-3 500:pb-0 border-b border-b-[#DCDFE7] 500:border-b-0">
+      <div class="w-2/3 h-6 bg-gray-200 animate-pulse rounded"></div>
+      <div class="aspect-[362/36] bg-gray-200 animate-pulse rounded"></div>
+      <div class="aspect-[362/60] bg-gray-200 animate-pulse rounded"></div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #mediaSkeleton>
+  <div class="aspect-[408/299] common-radius overflow-hidden bg-gray-200 animate-pulse">
+  </div>
+</ng-template>
+
+<ng-template #vacanciesSkeleton>
+  <div class="aspect-[412/202] common-radius overflow-hidden bg-gray-200 animate-pulse">
+  </div>
+</ng-template>

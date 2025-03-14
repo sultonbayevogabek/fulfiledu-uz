@@ -1,0 +1,99 @@
+<section-container class="flex-grow" bgColor="gray">
+  <div class="wrapper grid grid-cols-10 items-start gap-6">
+    @if (vacancy()) {
+      <ng-container
+        *ngTemplateOutlet="navigationBack"
+      />
+      <ng-container
+        *ngTemplateOutlet="vacancyInfo"
+      />
+      <ng-container
+        *ngTemplateOutlet="anotherVacanciesTemplate"
+      />
+    } @else {
+      <loader
+        class="col-span-10"
+      />
+    }
+  </div>
+</section-container>
+
+<ng-template #navigationBack>
+  <div class="col-span-10 1100:col-span-3 1300:col-span-2 flex items-center gap-3 relative pl-13">
+    <div
+      class="absolute left-0 w-11 aspect-square grid place-content-center rounded-full custom-shadow cursor-pointer bg-white"
+      (click)="back()"
+    >
+      <icon name="arrow-back" size="24"/>
+    </div>
+
+    <div class="text-[#474B56] font-thin">Orqaga qaytish</div>
+  </div>
+</ng-template>
+
+<ng-template #vacancyInfo>
+  <div class="col-span-10 1100:col-span-7 1300:col-span-5 flex flex-col gap-5 1200:gap-6 pb-20">
+    @if (vacancy()) {
+      <div class="font-thin">
+        <a class="text-[#474B56]" routerLink="/vacancies">Vakansiyalar</a> /
+        <span class="font-normal">{{ vacancy().title }}</span>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <h1 class="text-[20px] 800:text-[22px] 1200:text-[24px] leading-[1.2] font-normal">{{ vacancy().title }}</h1>
+
+        <p class="text-[16px] 800:text-[18px] 1200:text-[20px] leading-[1.2]">{{ vacancy().salary }} so'm</p>
+      </div>
+
+      <p class="text-[#474B56] font-thin">{{ vacancy().description }}</p>
+
+      <ng-container
+        *ngTemplateOutlet="checkList; context: {
+          $implicit: { title: 'Talablar', options: vacancy().requirementsList }
+        }"
+      />
+
+      <ng-container
+        *ngTemplateOutlet="checkList; context: {
+          $implicit: { title: 'Takliflar', options: vacancy().offersList }
+        }"
+      />
+
+      <custom-button
+        class="mt-5"
+        text="Aloqaga chiqish"
+        type="green"
+        phone="+998952303909"
+      />
+    }
+  </div>
+</ng-template>
+
+<ng-template #anotherVacanciesTemplate>
+  <div class="col-span-3 hidden 1300:flex flex-col common-gap">
+    @for (another of anotherVacancies(); let i = $index; track i) {
+      <vacancy-card
+        [vacancy]="another"
+        [bgColor]="'white'"
+      />
+    }
+  </div>
+</ng-template>
+
+<ng-template #checkList let-item>
+  <ul class="flex flex-col gap-3">
+    <li class="text-[16px] 800:text-[18px] 1200:text-[20px]">{{ item.title }}</li>
+
+    @for (i of item?.options; track i) {
+      @if (i) {
+        <li class="flex items-start gap-3">
+          <div class="w-6 1200:w-7 aspect-square shrink-0">
+            <image class="w-full h-full" src="images/icons/tick.svg"/>
+          </div>
+
+          <p class="pt-0.5 text-[#474B56] font-thin">{{ i }}</p>
+        </li>
+      }
+    }
+  </ul>
+</ng-template>

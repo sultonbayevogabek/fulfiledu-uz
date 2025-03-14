@@ -1,0 +1,52 @@
+<div class="flex items-center justify-between py-2.5 800:py-4 1200:py-5 relative">
+  <div class="flex items-center gap-4">
+    <icon
+      class="cursor-pointer 1100:hidden"
+      name="hamburger"
+      size="20"
+      (click)="openMobileMenu()"
+    />
+
+    <image
+      routerLink="/"
+      class="w-18 800:w-20 1200:w-25 aspect-[130/83] cursor-pointer"
+      src="images/logos/white-logo.svg"
+    />
+  </div>
+
+  <ng-container
+    *ngTemplateOutlet="nav"
+  />
+
+  <div class="flex items-center gap-3 800:gap-5 1200:gap-8">
+    <custom-button
+      class="hidden 1100:block"
+      text="Biz bilan bog'lanish"
+      type="white"
+      phone="+998952303909"
+    />
+
+    <div class="flex items-center gap-4">
+      <a href="https://t.me/fulfil_education">
+        <icon size="24" name="telegram"/>
+      </a>
+
+      <a href="#">
+        <icon size="24" name="instagram"/>
+      </a>
+    </div>
+  </div>
+</div>
+
+<ng-template #nav>
+  <nav class="hidden 1100:block">
+    <ul class="flex items-center justify-center gap-8 flex-grow">
+      @for (menuItem of menu; track menuItem.text) {
+        <li class="text-white hover:opacity-85">
+          <a class="block w-full" [routerLink]="menuItem.link">{{ menuItem.text }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+</ng-template>
+

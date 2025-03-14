@@ -1,0 +1,11 @@
+<div
+  class="wrapper flex flex-col">
+  <site-header/>
+
+  @if (heading()) {
+    <h1
+      class="pt-[80px] pb-[120px] 800:pt-[110px] 800:pb-[150px] 1200:pt-[140px] 1200:pb-[180px] font-bebas leading-[1.2] text-center text-[32px] 800px:text-[40px] 1200:text-[48px] text-white">
+      {{ heading() }}
+    </h1>
+  }
+</div>

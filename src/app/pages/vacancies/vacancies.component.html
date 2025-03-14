@@ -1,0 +1,46 @@
+<section-container>
+  <div class="wrapper flex flex-col common-gap">
+    @if (page() === 'home') {
+      <ng-container
+        *ngTemplateOutlet="headerTemplate"
+      />
+    }
+
+    @if (vacancies().length) {
+      <ng-container
+        *ngTemplateOutlet="blogsTemplate"
+      />
+    } @else {
+      <skeleton
+        type="vacancies"
+        [count]="page() === 'home' ? 4 : 12"
+      />
+    }
+  </div>
+</section-container>
+
+<ng-template #headerTemplate>
+  @if (page() === 'home') {
+    <div class="flex items-center justify-between gap-4">
+      <section-heading
+        heading="Vakansiyalar"
+      />
+
+      <custom-button
+        class="hidden 500:block"
+        text="Barchasini ko'rish"
+        routerLink="vacancies"
+      />
+    </div>
+  }
+</ng-template>
+
+<ng-template #blogsTemplate>
+  <div class="grid grid-cols-1 700:grid-cols-2 900:grid-cols-3 1400:grid-cols-4 common-gap">
+    @for (vacancy of vacancies(); let i = $index; track i) {
+      <vacancy-card
+        [vacancy]="vacancy"
+      />
+    }
+  </div>
+</ng-template>

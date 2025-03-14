@@ -1,0 +1,36 @@
+<nav
+  [class.-translate-x-full]="!isMenuOpen()"
+  class="fixed z-10 left-0 top-0 flex flex-col gap-8 w-[280px] max-w-screen h-screen p-4 800:p-6 bg-white transform transition-transform duration-300">
+  <image
+    class="w-18 aspect-[130/83]"
+    src="images/logos/green-logo.svg"
+  />
+
+  <ul class="flex flex-col flex-grow shrink-[1] overflow-auto gap-4">
+    @for (menuItem of menu; track menuItem.text) {
+      <li
+        class="leading-[1]"
+      >
+        <a
+          class="block w-full"
+          [routerLink]="menuItem.link"
+          (click)="closeMenu()">
+          {{ menuItem.text }}
+        </a>
+      </li>
+    }
+  </ul>
+
+  <custom-button
+    classes="w-full"
+    text="Biz bilan bog'lanish"
+    type="green"
+    phone="+998952303909"
+  />
+</nav>
+
+<div
+  [class.hidden]="!isMenuOpen()"
+  (click)="closeMenu()"
+  class="fixed inset-0 h-screen bg-[#0000004d]"
+></div>

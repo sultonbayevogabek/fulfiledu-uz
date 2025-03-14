@@ -1,0 +1,10 @@
+<button
+  (click)="onBtnClick()"
+  class="h-10 800:h-11 1200:h-12 px-5 800:px-6 1200:px-8 rounded-[6px] 800:rounded-[8px] 1200:rounded-[12px] cursor-pointer transition-all {{ classes() }} truncate"
+  [ngClass]="{
+    'bg-[#02BC74] text-white hover:bg-[#00925A] text-white': type() === 'green',
+    'bg-white hover:bg-[#02BC74] hover:text-white': type() === 'white'
+  }"
+>
+  {{ text() }}
+</button>

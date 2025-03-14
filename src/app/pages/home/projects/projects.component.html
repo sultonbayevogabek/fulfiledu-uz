@@ -1,0 +1,36 @@
+<section-container>
+  <div class="wrapper flex flex-col common-gap">
+    <section-heading
+      heading="Fulfil hozirgacha qanday loyihalar bilan shug'ullanib keldi?"
+    />
+
+    <div class="grid grid-cols-1 900:grid-cols-2 1500:grid-cols-3 common-gap">
+      @for (item of projects; track item.title; let i = $index) {
+        <div class="relative flex flex-col 900:flex-row items-start gap-2 800:gap-3 1200:gap-4 p-3 800:p-4 1200:p-5 rounded-[6px] 800:rounded-[8px] 1200:rounded-[12px] border border-[#DCDFE7]">
+          <image
+            class="w-10 800:w-11 1200:w-13 aspect-square flex-shrink-0"
+            [src]="'images/projects/' + (i + 1) + '.svg'"
+          />
+
+          <div class="flex flex-col gap-1.5 1200:gap-2.5 leading-[1.2]">
+            <div class="text-[16px] 800:text-[18px] 1200:text-[20px]">
+              {{ item.title }}
+            </div>
+            <p class="font-[300] text-[#474B56]">
+              {{ item.description }}
+            </p>
+          </div>
+
+          <div
+            class="absolute px-2 py-1 rounded-full top-[-10px] right-3 bg-[#F6F7F9] text-[#474B56] text-[12px] leading-[1] font-[300]"
+            [ngClass]="{
+              'border border-[#02BC74] bg-[#EEFAF5]': item.status === 'active'
+            }"
+          >
+            {{ item.status === 'active' ? 'Aktiv' : 'Yakunlandi' }}
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section-container>

@@ -1,0 +1,23 @@
+<div
+  class="flex flex-col gap-12 common-radius p-4 800:p-5 1200:p-6"
+  [ngClass]="{
+    backgroundColor: bgColor() === 'gray' ? '#F6F7F9' : '#FFFFFF',
+    'bg-[#F6F7F9]': bgColor() === 'gray',
+    'bg-white': bgColor() === 'white',
+  }"
+>
+  <div class="flex flex-col gap-4 leading-[1]">
+    <div class="text-[16px] 1200:text-[18px]">{{ vacancy().title }}</div>
+    <div>
+      <span class="text-[16px] 800:text-[18px] 1200:text-[20px]">{{ vacancy().salary }}</span>
+      <span class="text-[16px] 1200:text-[18px] text-[#8D929F]"> so'm</span>
+    </div>
+  </div>
+
+  <custom-button
+    routerLink="/vacancies/{{ vacancy().id }}"
+    classes="w-full {{ bgColor() === 'white' ? 'border border-[#DCDFE7]': '' }}"
+    text="Batafsil ko'rish"
+    [type]="'white'"
+  />
+</div>
