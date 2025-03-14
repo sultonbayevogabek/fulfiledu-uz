@@ -41,7 +41,7 @@ export class HistoryComponent {
     {
       year: 2024,
       title: 'Eng yuqori o‘sish davri',
-      description: '2023-yil o\'rtalardan boshlab, o\'zgarishlar bo\'lishni boshlagan va o\'quvchilar soni 300-400+ ga yetgan'
+      description: '1500+ o\'quvchi, yangi expertlar bilan hamkorlik, kurslarda o\'zgarishlar, qo\'shimcha qulayliklar. Yangi, shinam va keng office'
     }
   ]
 }

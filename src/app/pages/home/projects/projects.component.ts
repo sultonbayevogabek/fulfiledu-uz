@@ -25,12 +25,12 @@ export class ProjectsComponent {
     },
     {
       title: 'Backend dasturlash kursi',
-      description: 'Komiljon Xamidjonov bilan 2023 - sentyabrdan 2024-Sentabr oyichaga backend dasturlash kursi bo’yicha hamkorlik',
+      description: 'Komiljon Xamidjonov bilan 2023-yil sentabrdan hozirgacha Backend dasturlash kursi bo\'yicha hamkorlik davom etib kelyapti, 5-patok darslari yakunlangan',
       status: 'finished'
     },
     {
-      title: 'Russ tili kursi',
-      description: '2023-yil noyabrdan - Hozirga Azizbek Khabibullaev Ayti ekspert bilan frontend dasturlash kursi bo’yicha hamkorlik',
+      title: 'Rus tili kursi',
+      description: '2023-yil oktyabr oyidan hozirgacha 11 yillik tajribaga ega rus tili o\'qituvchisi Zarina Ismoilovnaning "Super rus tili" kursi bilan hamkorlik. 10-patok darslari boshlangan',
       status: 'active'
     },
     {
@@ -40,12 +40,12 @@ export class ProjectsComponent {
     },
     {
       title: 'Buxgalteriya kursi',
-      description: '2024-yil may oylaridan - 2024-yil avgust oyiga Bekzod Amanov Gigant Buxgalter kompaniyasi rahbari bilan Buxgalteriya kursi bo’yicha hamkorlik',
+      description: '2024-yil may oyidan avgust oyiga qadar "Gigant bugalter" kompaniyasi rahbari Bekzod Amonov bilan hamkorlik',
       status: 'finished'
     },
     {
       title: 'Uzum market kursi',
-      description: '2024-yil Avgust oyidan - 2024-yil Dekabr oygiacha Farhod Ruzmatov Uzumda rasmiy spiker Uzum market savdosi kursi',
+      description: '2024-yil Avgust oyidan - 2024-yil Dekabr oyigacha Farhod Ruzmatov Uzumda rasmiy spiker Uzum market savdosi kursi',
       status: 'finished'
     }
   ];
