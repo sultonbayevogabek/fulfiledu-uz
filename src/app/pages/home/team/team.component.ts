@@ -8,6 +8,8 @@ import { NgTemplateOutlet } from '@angular/common';
 import { MemberFilterPipe } from './member-filter.pipe';
 import { ImageComponent } from '@shared/components/image/image.component';
 import { SkeletonComponent } from '@shared/components/skeleton/skeleton.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { customOptions } from '@shared/constants/carousel';
 
 @Component({
   selector: 'team',
@@ -18,7 +20,8 @@ import { SkeletonComponent } from '@shared/components/skeleton/skeleton.componen
     NgTemplateOutlet,
     MemberFilterPipe,
     ImageComponent,
-    SkeletonComponent
+    SkeletonComponent,
+    CarouselModule
   ],
   templateUrl: './team.component.html',
   standalone: true
@@ -28,6 +31,7 @@ export class TeamComponent implements OnInit {
   departments = signal<string[]>([]);
   selectedDepartment = signal<string>(null);
   members = signal<IMember[]>([]);
+  carouselOptions = customOptions;
 
   private sheetsService = inject(SheetsService);
 

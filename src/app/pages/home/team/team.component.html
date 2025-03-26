@@ -52,13 +52,15 @@
 
 <!--Members-->
 <ng-template #membersTemplate>
-  <div class="grid grid-cols-1 500:grid-cols-2 900:grid-cols-3 1400:grid-cols-4 common-gap">
+  <owl-carousel-o [options]="carouselOptions">
     @for (member of members()| memberFilter: selectedDepartment(); track member.name) {
-      <ng-container
-        *ngTemplateOutlet="memberCard; context: { $implicit: member }"
-      />
+      <ng-template carouselSlide>
+        <ng-container
+          *ngTemplateOutlet="memberCard; context: { $implicit: member }"
+        />
+      </ng-template>
     }
-  </div>
+  </owl-carousel-o>
 </ng-template>
 
 <!--Member card-->
