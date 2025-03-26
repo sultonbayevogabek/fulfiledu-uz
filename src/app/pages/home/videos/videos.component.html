@@ -9,35 +9,69 @@
     <ng-container
       *ngTemplateOutlet="videos"
     />
+
+
   </div>
 </section-container>
 
 <!--Members-->
 <ng-template #videos>
-  <div class="grid grid-cols-1 500:grid-cols-2 900:grid-cols-3 1400:grid-cols-4 common-gap">
-    <div class="common-radius overflow-hidden aspect-[1072/1920] bg-gray-200">
-      <video class="w-full h-full object-cover object-center" controls preload="none"
-             poster="videos/poster-1.jpg">
-        <source src="https://file.ijro.uz/download/67d4399693524a00016a9e53/content">
-      </video>
-    </div>
-    <div class="common-radius overflow-hidden aspect-[1072/1920] bg-gray-200">
-      <video class="w-full h-full object-cover object-center" controls preload="none"
-             poster="videos/poster-2.jpg">
-        <source src="https://file.ijro.uz/download/67d43982231f5800011cea91/content">
-      </video>
-    </div>
-    <div class="common-radius overflow-hidden aspect-[1072/1920] bg-gray-200">
-      <video class="w-full h-full object-cover object-center" controls preload="none"
-             poster="videos/poster-3.jpg">
-        <source src="https://file.ijro.uz/download/67d4396b16211a0001fc7d31/content">
-      </video>
-    </div>
-    <div class="common-radius overflow-hidden aspect-[1072/1920] bg-gray-200">
-      <video class="w-full h-full object-cover object-center" controls preload="none"
-             poster="videos/poster-4.jpg">
-        <source src="https://file.ijro.uz/download/67d439795d21ac0001076ada/content">
-      </video>
-    </div>
-  </div>
+  <owl-carousel-o [options]="carouselOptions">
+    <ng-template carouselSlide>
+      <div class="common-radius overflow-hidden aspect-[1072/1920] bg-gray-200">
+        <iframe
+          class="w-full h-full"
+          src="https://rutube.ru/play/embed/885971f7a948364fd43a6c87e35733a4?skinColor=02BC74"
+          frameBorder="0"
+          allow="clipboard-write; autoplay"
+          webkitAllowFullScreen
+          mozallowfullscreen
+          allowFullScreen
+        ></iframe>
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="common-radius overflow-hidden aspect-[1072/1920] bg-gray-200">
+        <iframe
+          class="w-full h-full"
+          src="https://rutube.ru/play/embed/6ffe0b995826d6e15f32522092a715da?skinColor=02BC74"
+          frameBorder="0"
+          allow="clipboard-write; autoplay"
+          webkitAllowFullScreen
+          mozallowfullscreen
+          allowFullScreen
+        ></iframe>
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="common-radius overflow-hidden aspect-[1072/1920] bg-gray-200">
+        <iframe
+          class="w-full h-full"
+          src="https://rutube.ru/play/embed/782fbe5665786fa5811bb0c3c10ce9be?skinColor=02BC74"
+          frameBorder="0"
+          allow="clipboard-write; autoplay"
+          webkitAllowFullScreen
+          mozallowfullscreen
+          allowFullScreen
+        ></iframe>
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="common-radius overflow-hidden aspect-[1072/1920] bg-gray-200">
+        <iframe
+          class="w-full h-full"
+          src="https://rutube.ru/play/embed/6c875cda17747da5a4b1082b36436026?skinColor=02BC74"
+          frameBorder="0"
+          allow="clipboard-write; autoplay"
+          webkitAllowFullScreen
+          mozallowfullscreen
+          allowFullScreen
+        ></iframe>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
 </ng-template>
+
