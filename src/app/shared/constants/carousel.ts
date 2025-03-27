@@ -6,11 +6,14 @@ export const customOptions: OwlOptions = {
   touchDrag: true,
   pullDrag: false,
   mergeFit: false,
+  autoWidth: true,
   dots: false,
   navSpeed: 700,
   navText: ['', ''],
   autoplay: true,
   rewind: false,
+  items: 4,
+  margin: 24,
   responsive: {
     0: {
       items: 1,

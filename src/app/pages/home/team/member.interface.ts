@@ -5,4 +5,5 @@ export interface IMember {
   result: string
   department: string
   image: string
+  isEmpty: boolean
 }
