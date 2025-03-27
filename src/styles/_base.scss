@@ -23,3 +23,36 @@ body {
   box-shadow: 0 0 18px 0 #00000014;
 }
 
+.owl-item {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .owl-item {
+    max-width: calc(50% - 6px);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .owl-item {
+    max-width: calc(50% - 9px);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .owl-item {
+    max-width: calc(33.333333333333333% - 12px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .owl-item {
+    max-width: calc(33.333333333333333% - 16px);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .owl-item {
+    max-width: calc(25% - 18px);
+  }
+}

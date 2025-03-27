@@ -8,6 +8,8 @@ import { BlogsService } from './blogs.service';
 import { SkeletonComponent } from '@shared/components/skeleton/skeleton.component';
 import { RouterLink } from '@angular/router';
 import { SlugifyPipe } from '@shared/pipes/slugify.pipe';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { customOptions } from '@shared/constants/carousel';
 
 @Component({
   selector: 'blogs',
@@ -19,7 +21,8 @@ import { SlugifyPipe } from '@shared/pipes/slugify.pipe';
     ImageComponent,
     SkeletonComponent,
     RouterLink,
-    SlugifyPipe
+    SlugifyPipe,
+    CarouselModule
   ],
   templateUrl: './blogs.component.html',
   standalone: true
@@ -33,6 +36,7 @@ export class BlogsComponent implements OnInit {
     }
     return this.blogsService.blogs().slice(0, 4);
   });
+  carouselOptions = customOptions;
 
   private blogsService = inject(BlogsService);
 
