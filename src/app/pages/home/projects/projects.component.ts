@@ -26,7 +26,7 @@ export class ProjectsComponent {
     {
       title: 'Backend dasturlash kursi',
       description: 'Komiljon Xamidjonov bilan 2023-yil sentabrdan hozirgacha Backend dasturlash kursi bo\'yicha hamkorlik davom etib kelyapti, 5-patok darslari yakunlangan',
-      status: 'finished'
+      status: 'active'
     },
     {
       title: 'Rus tili kursi',
